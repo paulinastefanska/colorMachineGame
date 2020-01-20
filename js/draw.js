@@ -1,6 +1,6 @@
 class Draw {
   constructor() {
-    this.options = ["red", "green", "blue"];
+    this.options = ["#ff4757", "#2ed573", "#1e90ff"];
     let _result = this.drawResult();
     this.getDrawResult = () => _result;
   }
