@@ -1,117 +1,122 @@
 * {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .wrap {
- width: 80%;
- margin: 5vh auto 0;
- font-family: 'open sans', roboto, sans-serif;
+  width: 600px;
+  margin: 5vh auto 0;
+  font-family: "open sans", roboto, sans-serif;
 }
 h1 {
- font-size: 50px;
- text-align: center;
- text-transform: uppercase;
- margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px;
 }
 .game {
- display: flex;
- margin-bottom: 2vh;
+  display: flex;
+  margin-bottom: 2vh;
 }
-.game div {
- height: 30vh;
- flex-grow: 1;
- margin: 10px;
- border: 3px solid gray;
- border-radius: 15px;
+.color {
+  height: 170px;
+  flex-grow: 1;
+  margin: 10px;
+  border: 3px solid gray;
+  border-radius: 15px;
 }
 .play {
- text-align: center;
- height: 90px;
- display: flex;
- justify-content: center;
- margin: 10px auto;
+  text-align: center;
+  max-width: 350px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
 }
-.play input{
- font-size: 28px;
- border: 3px solid black;
- border-radius: 15px;
- text-align: center;
- margin-right: 20px;
+.play input {
+  width: 60%;
+  font-size: 22px;
+  border: 3px solid black;
+  border-radius: 15px;
+  text-align: center;
+  margin-right: 20px;
 }
 .play button {
- width: 20%;
- font-size: 35px;
- text-align: center;
- text-transform: uppercase;
- background-color: #333;
- border: 3px solid #333;
- border-radius: 15px;
- color: white;
- cursor: pointer;
- letter-spacing: 6px;
- transition: .2s ease;
+  width: 40%;
+  font-size: 24px;
+  text-transform: uppercase;
+  background-color: #333;
+  border: 3px solid #333;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+  letter-spacing: 6px;
+  transition: 0.2s ease;
 }
 .play button:hover {
-  color: #333;
-  background-color: white;
+  transform: scale(1.1);
 }
 .panel {
- margin: 30px auto;
- font-size: 26px;
- padding: 5px;
- border: 3px solid #333;
- border-radius: 15px;
- width: 350px;
- text-align: center;
+  margin: 30px auto;
+  font-size: 24px;
+  padding: 5px;
+  border: 3px solid #333;
+  border-radius: 15px;
+  width: 350px;
+  text-align: center;
 }
-.panel, .score {
- font-size: 26px;
- padding: 5px;
- border: 3px solid #333;
- border-radius: 15px;
- width: 350px;
- text-align: center;
- margin: 30px auto;
+.panel,
+.score {
+  font-size: 22px;
+  padding: 5px;
+  border: 3px solid #333;
+  border-radius: 15px;
+  width: 350px;
+  text-align: center;
+  margin: 30px auto;
+  background-color: #333;
+  color: #fff;
 }
-.panel span, .score span {
- font-weight: bold;
+.panel span,
+.score span {
+  font-weight: bold;
 }
 
 @media (max-width: 767px) {
- .wrap {
-   width: 90%;
- }
- h1 {
-  font-size: 35px;
- }
- .game div {
-  height: 18vh;
-  margin: 5px;
- }
- .play {
-   flex-direction: column;
-   height: auto;
- }
- .play input{
-  height: 50px;
-  width: 150px;
-  display: block;
-  margin: 20px auto;
-  font-size: 20px;
- }
- .play button {
-  height: 50px;
-  width: 150px;
-  font-size: 20px;
-  text-align: center;
-  margin: 0 auto;
- }
- .panel {
-  margin: 25px 0;
- }
- .panel, .score {
-   width: auto;
-   font-size: 24px;
- }
+  .wrap {
+    width: 500px;
+  }
+  .color {
+    height: 140px;
+  }
+}
+@media (max-width: 575px) {
+  .wrap {
+    max-width: 350px;
+  }
+  .color {
+    height: 90px;
+    margin: 5px;
+  }
+  .play {
+    align-items: center;
+  }
+  .play input {
+    height: 50px;
+    width: 55%;
+    margin: 20px auto;
+    font-size: 20px;
+  }
+  .play button {
+    height: 45px;
+    width: 35%;
+    font-size: 20px;
+    margin: 0 auto;
+  }
+  .panel {
+    margin: 25px 0;
+  }
+  .panel,
+  .score {
+    width: auto;
+  }
 }
