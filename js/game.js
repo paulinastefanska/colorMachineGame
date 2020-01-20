@@ -2,25 +2,36 @@ class Game {
   constructor(start) {
     this.stats = new Statistics();
     this.wallet = new Wallet(start);
-    document.getElementById('start').addEventListener('click', this.startGame.bind(this));
-    this.spanWallet = document.querySelector('.panel span.wallet');
-    this.divColor = [...document.querySelectorAll('div.color')];
-    this.inputBid = document.getElementById('bid');
-    this.spanResult = document.querySelector('.score .result');
-    this.spanRounds = document.querySelector('.score .number');
-    this.spanWin = document.querySelector('.score .win');
-    this.spanLoss = document.querySelector('.score .loss');
+    document
+      .getElementById("start")
+      .addEventListener("click", this.startGame.bind(this));
+    this.spanWallet = document.querySelector(".panel span.wallet");
+    this.divColor = [...document.querySelectorAll("div.color")];
+    this.inputBid = document.getElementById("bid");
+    this.spanResult = document.querySelector(".score .result");
+    this.spanRounds = document.querySelector(".score .number");
+    this.spanWin = document.querySelector(".score .win");
+    this.spanLoss = document.querySelector(".score .loss");
     this.render();
   }
-  render (colors = ['gray', 'gray', 'gray'], money = this.wallet.getWalletValue(), result = "", stats = [0, 0, 0], bid = 0, wonMoney = 0) {
+  render(
+    colors = ["gray", "gray", "gray"],
+    money = this.wallet.getWalletValue(),
+    result = "",
+    stats = [0, 0, 0],
+    bid = 0,
+    wonMoney = 0
+  ) {
     this.divColor.forEach((div, index) => {
       div.style.backgroundColor = colors[index];
     });
     this.spanWallet.textContent = money;
     if (result) {
-      result = `Congrats! You WON  $${wonMoney}`
+      result = `Congrats! You WON  $${wonMoney}`;
     } else if (!result && result !== "") {
-      result = `Sorry, You LOST  $${bid}`
+      result = `Sorry, You LOST  $${bid}`;
+    } else {
+      result = "Start The Game!";
     }
     this.spanResult.textContent = result;
     this.spanRounds.textContent = stats[0];
@@ -36,7 +47,7 @@ class Game {
       return alert("Oops! ...you do not have enough money!");
     }
 
-    this.wallet.changeWalletValue(bid, '-');
+    this.wallet.changeWalletValue(bid, "-");
 
     this.draw = new Draw();
     const colors = this.draw.getDrawResult();
@@ -45,7 +56,13 @@ class Game {
     this.wallet.changeWalletValue(wonMoney);
     this.stats.addGameResults(win, bid);
 
-    this.render (colors, this.wallet.getWalletValue(), win, this.stats.showGameResults(), bid, wonMoney);
+    this.render(
+      colors,
+      this.wallet.getWalletValue(),
+      win,
+      this.stats.showGameResults(),
+      bid,
+      wonMoney
+    );
   }
-};
-
+}
